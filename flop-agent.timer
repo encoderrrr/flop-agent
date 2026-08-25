@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly Technocore FLOP agent check-in
+
+[Timer]
+OnCalendar=Mon 12:00
+Persistent=true
+RandomizedDelaySec=15m
+Unit=flop-agent.service
+
+[Install]
+WantedBy=timers.target

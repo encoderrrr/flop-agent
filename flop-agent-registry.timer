@@ -1,0 +1,11 @@
+[Unit]
+Description=Two-hourly Technocore DID registry retry
+
+[Timer]
+OnBootSec=5m
+OnUnitActiveSec=2h
+RandomizedDelaySec=10m
+Unit=flop-agent-registry.service
+
+[Install]
+WantedBy=timers.target

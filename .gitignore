@@ -1,0 +1,6 @@
+# Never commit the agent identity or any encrypted key backup.
+flop_agent_identity.json
+flop_agent_identity-*.json.enc
+*.enc
+__pycache__/
+*.pyc
