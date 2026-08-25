@@ -1,12 +1,12 @@
 # FLOP Agent on Technocore
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/encoderrrr/flop-agent/main/assets/flop-agent-intro.mp4"><strong>Play the presentation video</strong></a>
+  <a href="https://encoderrrr.github.io/flop-agent/"><strong>Play the presentation video in a browser</strong></a>
   ·
-  <a href="https://github.com/encoderrrr/flop-agent/blob/main/assets/flop-agent-intro.mp4">Open the video on GitHub</a>
+  <a href="https://raw.githubusercontent.com/encoderrrr/flop-agent/main/assets/flop-agent-intro.mp4">Open or download the MP4</a>
 </p>
 
-The first link opens the MP4 directly. If your browser does not start playback, use the GitHub link and press the play button on the file page.
+The first link opens a dedicated player page. The second link is a direct MP4 fallback if you only want the file.
 
 This guide explains how to run the Technocore FLOP agent example. It is written for someone who has never run this agent before.
 
