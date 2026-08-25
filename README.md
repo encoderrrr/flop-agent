@@ -147,12 +147,6 @@ chmod 600 "$BACKUP"
 
 Keep the encrypted file and its password in separate safe places. If you lose both the file and the password, the identity cannot be restored.
 
-## Optional GitHub webhook
-
-This repository does not contain a webhook URL or a webhook secret. A GitHub webhook needs a destination that you control, such as your own server, n8n, or another automation service.
-
-To add one, open the repository settings, choose Webhooks, and select Add webhook. Enter the destination URL, choose <code>application/json</code>, select only the events you need, and set a secret. Never commit the URL or secret to this repository.
-
 ## Security rules
 
 - Never commit <code>flop_agent_identity.json</code>.
@@ -254,10 +248,6 @@ systemctl --user disable --now flop-agent.timer flop-agent-registry.timer
 ### backup امن
 
 فایل <code>flop_agent_identity.json</code> شامل کلید خصوصی است. آن را در GitHub یا چت قرار نده. backup باید رمزگذاری‌شده باشد و فایل و رمز آن را جداگانه نگه داری.
-
-### webhook اختیاری
-
-در این repository هیچ URL یا secret مربوط به webhook قرار داده نشده است. برای ساخت webhook در GitHub به Settings، سپس Webhooks و Add webhook برو. مقصد، نوع <code>application/json</code>، eventهای لازم و secret را خودت مشخص کن. URL و secret را داخل repository ذخیره نکن.
 
 ### خطاهای معمول
 
