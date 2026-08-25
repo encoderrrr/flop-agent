@@ -34,7 +34,7 @@
       p { color: var(--muted); }
       a { color: var(--accent); }
       .panel { background: rgba(13, 27, 47, .88); border: 1px solid var(--line); border-radius: 18px; padding: 24px; margin-top: 24px; box-shadow: 0 18px 60px rgba(0, 0, 0, .2); }
-      video { display: block; width: 100%; border-radius: 12px; background: #000; }
+      .hero-image { display: block; width: 100%; height: auto; border-radius: 12px; }
       .links { display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 14px; }
       code { color: #d7f7ff; }
       [dir="rtl"] { text-align: right; }
@@ -44,24 +44,22 @@
   <body>
     <main>
       <div class="eyebrow">Technocore FLOP agent</div>
-      <h1>Watch the introduction</h1>
-      <p>This page is the reliable browser player for the repository video. Use the controls to play, pause, change the volume, or enter full screen.</p>
+      <h1>FLOP Agent introduction</h1>
+      <p>This page presents the FLOP Agent image and links to the beginner-friendly bilingual setup guide.</p>
 
-      <section class="panel" aria-labelledby="video-title">
-        <h2 id="video-title">FLOP agent introduction</h2>
-        <video controls preload="metadata" playsinline>
-          <source src="assets/flop-agent-intro.mp4" type="video/mp4">
-          Your browser cannot play this MP4. <a href="assets/flop-agent-intro.mp4">Download the video</a> instead.
-        </video>
+      <section class="panel" aria-labelledby="image-title">
+        <h2 id="image-title">FLOP agent visual</h2>
+        <img class="hero-image" src="assets/flop-agent-intro.png" alt="Blue FLOP AI Agent illustration with a futuristic robot">
         <div class="links">
           <a href="README.md">Read the bilingual setup guide</a>
+          <a href="assets/flop-agent-intro.png">Open the full-size image</a>
           <a href="https://github.com/encoderrrr/flop-agent">Open the GitHub repository</a>
         </div>
       </section>
 
       <section class="panel" dir="rtl" lang="fa" aria-labelledby="fa-title">
         <h2 id="fa-title">راهنمای کوتاه</h2>
-        <p>برای دیدن ویدیو روی دکمهٔ پخش بزنید. راهنمای کامل نصب، بازیابی هویت، تایمرها و پشتیبان‌گیری به فارسی و انگلیسی در فایل README قرار دارد.</p>
+        <p>برای دیدن تصویر و راهنمای کامل نصب، بازیابی هویت، تایمرها و پشتیبان‌گیری به فایل README مراجعه کنید.</p>
         <p>فایل هویت، کلید خصوصی، رمز پشتیبان و اطلاعات کیف‌پول را در GitHub قرار ندهید.</p>
       </section>
 
