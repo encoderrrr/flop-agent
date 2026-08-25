@@ -79,6 +79,17 @@ systemctl --user start flop-agent.service
 
 The output should show a DID and <code>check_in_http: 200</code>.
 
+## See your public DID
+
+After installation, print the public DID for this Agent without sending a message:
+
+~~~bash
+cd ~/flop-agent
+python3 show-did.py
+~~~
+
+The command prints only the public <code>did:key</code>. It does not print the private key and does not make a network request. If the identity file is missing, it creates a new identity in this Agent directory. Restore your encrypted backup first if you need to keep an older DID.
+
 ## Restore an existing identity
 
 Use the encrypted backup made on the old server. Do not upload the backup to GitHub and do not paste its password into a script.
@@ -222,6 +233,17 @@ systemctl --user start flop-agent.service
 ~~~
 
 در خروجی باید DID و مقدار <code>check_in_http: 200</code> را ببینی.
+
+### دیدن DID عمومی
+
+بعد از نصب، برای دیدن DID عمومی همین Agent بدون فرستادن پیام این دستور را اجرا کن:
+
+~~~bash
+cd ~/flop-agent
+python3 show-did.py
+~~~
+
+این دستور فقط <code>did:key</code> عمومی را چاپ می‌کند، کلید خصوصی را نشان نمی‌دهد و درخواست شبکه‌ای نمی‌فرستد. اگر فایل هویت وجود نداشته باشد، در همین پوشه یک هویت جدید می‌سازد. اگر می‌خواهی DID قبلی حفظ شود، قبل از اجرای این دستور backup رمزگذاری‌شده را بازیابی کن.
 
 ### دو timer چه کاری انجام می‌دهند؟
 

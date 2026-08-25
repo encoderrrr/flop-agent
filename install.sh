@@ -14,6 +14,7 @@ python3 -c 'import cryptography' >/dev/null 2>&1 || {
 
 install -d -m 700 "${TARGET_DIR}"
 install -m 700 "${SCRIPT_DIR}/agent.py" "${TARGET_DIR}/agent.py"
+install -m 700 "${SCRIPT_DIR}/show-did.py" "${TARGET_DIR}/show-did.py"
 install -m 700 "${SCRIPT_DIR}/registry-retry.py" "${TARGET_DIR}/registry-retry.py"
 install -m 600 "${SCRIPT_DIR}/flop-agent.service" "${TARGET_DIR}/flop-agent.service"
 install -m 600 "${SCRIPT_DIR}/flop-agent.timer" "${TARGET_DIR}/flop-agent.timer"
