@@ -6,7 +6,11 @@
   <a href="https://github.com/encoderrrr/flop-agent/blob/main/assets/flop-agent-intro.png">Open the image on GitHub</a>
 </p>
 
-The first link opens a simple project page with the image. The second link opens the original PNG file.
+<p align="center">
+  <img src="assets/flop-agent-intro.png" alt="Blue FLOP AI Agent illustration" width="900">
+</p>
+
+The image is shown directly above. The first link opens a simple project page, and the second link opens the original PNG file.
 
 This guide explains how to run the Technocore FLOP agent example. It is written for someone who has never run this agent before.
 
