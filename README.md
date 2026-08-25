@@ -186,6 +186,8 @@ systemctl --user enable --now flop-agent.timer flop-agent-registry.timer
 
 The same identity is probably running on two servers. Stop the timers on the old server and keep only one active installation.
 
+<div dir="rtl" align="right">
+
 ## فارسی
 
 این راهنما اجرای Agent مربوط به Technocore FLOP را از ابتدا توضیح می‌دهد. اگر برای اولین بار است که با این Agent کار می‌کنی، مراحل را به همان ترتیب انجام بده.
@@ -245,9 +247,38 @@ systemctl --user disable --now flop-agent.timer flop-agent-registry.timer
 
 بعد <code>./install.sh</code> را روی سرور جدید اجرا کن و backup رمزگذاری‌شده را بده. فقط یک نسخه از یک DID باید فعال باشد.
 
-### backup امن
+### گرفتن backup از کلید خصوصی
 
-فایل <code>flop_agent_identity.json</code> شامل کلید خصوصی است. آن را در GitHub یا چت قرار نده. backup باید رمزگذاری‌شده باشد و فایل و رمز آن را جداگانه نگه داری.
+بعد از اولین اجرای موفق Agent، فایل هویت در مسیر زیر ساخته می‌شود. این فایل شامل کلید خصوصی است؛ آن را مستقیم کپی نکن و داخل GitHub یا چت قرار نده.
+
+~~~bash
+IDENTITY="$HOME/flop-agent/flop_agent_identity.json"
+test -f "$IDENTITY" && echo "identity file found"
+chmod 600 "$IDENTITY"
+~~~
+
+حالا یک backup رمزگذاری‌شده بساز. OpenSSL هنگام اجرا از تو یک رمز می‌پرسد؛ رمز را داخل اسکریپت، چت یا GitHub ننویس.
+
+~~~bash
+BACKUP="$HOME/flop-agent/flop_agent_identity-$(date +%Y%m%d).json.enc"
+openssl enc -aes-256-cbc -md sha256 -pbkdf2 -iter 300000 -salt \
+  -in "$IDENTITY" \
+  -out "$BACKUP"
+chmod 600 "$BACKUP"
+printf 'Encrypted backup: %s\n' "$BACKUP"
+~~~
+
+رمز backup و فایل <code>.enc</code> را در دو محل امن و جداگانه نگه دار. فایل backup را می‌توانی با SFTP یا یک حافظهٔ آفلاین امن منتقل کنی، اما آن را در GitHub، Telegram یا کنار فایل‌های عمومی repository نگذار.
+
+برای بازیابی همین DID روی سرور جدید:
+
+~~~bash
+./install.sh
+~~~
+
+وقتی اسکریپت مسیر backup را پرسید، مسیر فایل <code>.enc</code> را بده و سپس همان رمز backup را وارد کن. اسکریپت فایل را رمزگشایی می‌کند و با permission <code>600</code> در <code>~/flop-agent/flop_agent_identity.json</code> قرار می‌دهد. اگر backup یا رمز آن را از دست بدهی، بازیابی این DID ممکن نیست.
+
+این backup فقط برای هویت همین Agent است. از کلید validator، کیف‌پول یا exchange برای این پروژه استفاده نکن.
 
 ### خطاهای معمول
 
@@ -257,3 +288,5 @@ systemctl --user disable --now flop-agent.timer flop-agent-registry.timer
 - اگر پیام دوبار دیده شد، Agent با همان DID روی دو سرور فعال است. یکی از timerها را خاموش کن.
 
 این پروژه دریافت توکن یا ایردراپ را تضمین نمی‌کند. قبل از اجرای کد روی سرور، فایل‌ها را بررسی کن و کلیدهای اصلی خودت را در اختیار این Agent نگذار.
+
+</div>
